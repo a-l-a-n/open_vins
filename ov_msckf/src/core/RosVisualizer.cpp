@@ -147,6 +147,10 @@ void RosVisualizer::visualize_final() {
     if(!gt_states.empty()) {
         ROS_INFO("\033[0;95mRMSE average: %.3f (deg) orientation\033[0m",summed_rmse_ori/summed_number);
         ROS_INFO("\033[0;95mRMSE average: %.3f (m) position\033[0m",summed_rmse_pos/summed_number);
+        
+        FILE* fp = fopen("/home/symao/temp_rmse.txt", "w");
+        fprintf(fp, "%f %f\n", summed_rmse_ori/summed_number, summed_rmse_pos/summed_number);
+        fclose(fp);
     }
 
     // Publish RMSE and NEES if doing simulation
