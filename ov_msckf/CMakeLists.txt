@@ -87,3 +87,6 @@ target_link_libraries(run_simulation ov_msckf_lib ${thirdparty_libraries})
 
 add_executable(run_subscribe_msckf src/run_subscribe_msckf.cpp)
 target_link_libraries(run_subscribe_msckf ov_msckf_lib ${thirdparty_libraries})
+
+add_executable(run_serial_sf src/run_serial_sf.cpp src/vs_os.cpp)
+target_link_libraries(run_serial_sf ov_msckf_lib ${thirdparty_libraries})
